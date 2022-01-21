@@ -1,3 +1,4 @@
+/.clj-kondo
 /target
 /classes
 /checkouts
@@ -11,3 +12,4 @@ pom.xml.asc
 /.prepl-port
 .hgignore
 .hg/
+/.lsp
