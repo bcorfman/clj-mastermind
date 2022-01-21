@@ -27,7 +27,6 @@
 (defn evaluate [secret guess]
   (when (not= (count secret) (count guess))
     (throw (new Exception "secret and guess are different lengths.")))
-
   [(find-well-placed-colors secret guess) (find-misplaced-colors secret guess)])
 
 (defn -main
