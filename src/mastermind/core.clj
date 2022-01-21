@@ -31,7 +31,7 @@
 
 (defn -main
   "Execute Mastermind with a simple test case."
-  [& args]
+  []
   (let [secret-combination ["blue" "red" "green" "pink"]
         guess ["yellow" "red" "blue" "purple"]
         [num-well-placed num-misplaced] (evaluate secret-combination guess)]

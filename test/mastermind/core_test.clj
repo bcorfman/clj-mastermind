@@ -1,14 +1,10 @@
 (ns mastermind.core-test
-  (:require [clojure.test :refer :all]
-            [mastermind.core :refer :all]))
+  (:require [clojure.test :refer [deftest is testing]]
+            [mastermind.core :refer [find-well-placed-colors find-misplaced-colors evaluate]]))
 
 (deftest evaluate-different-secret-and-guess-length
   (testing "evaluate secret and guess different lengths"
     (is (thrown? Exception (evaluate [1 2 3] [4 5])))))
-
-;(deftest evaluate-correct-secret-and-guess
-;  (testing "evaluate secret and guess parameters are correct"
-;    (is (= (evaluate [1 2 3] [4 5 6]) nil))))
 
 (deftest first-kata-test-find-1-well-placed-color-out-of-4
   (testing "first sample test from kata"
