@@ -15,15 +15,14 @@
           (find-misplaced-colors (rest secret) (rest guess) (inc numMisplacedColors) knownColors)
           (find-misplaced-colors (rest secret) (rest guess) numMisplacedColors knownColors))))))
 
-(defn find-well-placed-colors [secret guess & [numWellPlacedColors wellPlacedColors]]
-  (let [numWellPlacedColors (or numWellPlacedColors 0)
-        wellPlacedColors (or wellPlacedColors #{})]
+(defn find-well-placed-colors [secret guess & [numWellPlacedColors]]
+  (let [numWellPlacedColors (or numWellPlacedColors 0)]
     (if (empty? secret)
       numWellPlacedColors
       (let [color (first secret)]
         (if (= (first guess) color)
-          (find-well-placed-colors (rest secret) (rest guess) (inc numWellPlacedColors) (conj wellPlacedColors color))
-          (find-well-placed-colors (rest secret) (rest guess) numWellPlacedColors wellPlacedColors))))))
+          (find-well-placed-colors (rest secret) (rest guess) (inc numWellPlacedColors))
+          (find-well-placed-colors (rest secret) (rest guess) numWellPlacedColors))))))
 
 (defn evaluate [secret guess]
   (when (not= (count secret) (count guess))
